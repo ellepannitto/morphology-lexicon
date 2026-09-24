@@ -18,10 +18,13 @@ Design choices (see README_UD.md for the rationale):
 """
 import sys
 from collections import defaultdict
+from pathlib import Path
 
-IN = sys.argv[1] if len(sys.argv) > 1 else "morph-it/morph-it_048.txt"
-OUT = sys.argv[2] if len(sys.argv) > 2 else "it_morphit_ud.tsv"
-UNMAPPED = "unmapped.tsv"
+DATA = Path(__file__).resolve().parent.parent / "data"
+
+IN = sys.argv[1] if len(sys.argv) > 1 else str(DATA / "morph-it" / "morph-it_048.txt")
+OUT = sys.argv[2] if len(sys.argv) > 2 else str(DATA / "it_morphit_ud.tsv")
+UNMAPPED = str(DATA / "unmapped.tsv")
 
 GEN = {"m": "Masc", "f": "Fem"}
 NUM = {"s": "Sing", "p": "Plur"}

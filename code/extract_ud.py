@@ -14,16 +14,20 @@ Two normalisation steps, in this order:
 """
 import glob
 import sys
+from pathlib import Path
 from collections import defaultdict
 
 from udlex import norm_feats, feats_str, feats_to_dict, collapse_underspecified, \
     iter_conllu_tokens
 
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+
 MIN_SHARE = 0.10
 TREEBANKS = {
-    "isdt": "UD_Italian-ISDT/it_isdt-ud-*.conllu",
-    "postwita": "UD_Italian-PoSTWITA/it_postwita-ud-*.conllu",
-    "parlamint": "UD_Italian-ParlaMint/it_parlamint-ud-*.conllu",
+    "isdt": str(ROOT / "UD_Italian-ISDT/it_isdt-ud-*.conllu"),
+    "postwita": str(ROOT / "UD_Italian-PoSTWITA/it_postwita-ud-*.conllu"),
+    "parlamint": str(ROOT / "UD_Italian-ParlaMint/it_parlamint-ud-*.conllu"),
 }
 
 
@@ -78,8 +82,8 @@ def extract(name, pattern):
             out_rows.append((form, lemma, upos, feats_str(dict(key)), c, s))
 
     out_rows.sort(key=lambda r: (r[0].lower(), r[0], r[1], -r[4]))
-    with open(f"it_{name}_ud.tsv", "w", encoding="utf-8") as out, \
-         open(f"it_{name}_ud.counts.tsv", "w", encoding="utf-8") as cnt:
+    with open(DATA / f"it_{name}_ud.tsv", "w", encoding="utf-8") as out, \
+         open(DATA / f"it_{name}_ud.counts.tsv", "w", encoding="utf-8") as cnt:
         cnt.write("form\tlemma\tupos\tfeats\tcount\tshare\n")
         for form, lemma, upos, feats, c, s in out_rows:
             out.write(f"{form}\t{lemma}\t{upos}\t{feats}\n")

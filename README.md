@@ -4,24 +4,32 @@ Harmonised full-form lexicon for Italian, aligned to
 [Universal Dependencies v2](https://universaldependencies.org/) (UPOS + FEATS),
 following the conventions of the Italian UD treebanks (ISDT).
 
-## Files
+## Layout
+
+```
+code/   udlex.py  convert_morphit.py  extract_ud.py  isdt_not_in_morphit.py
+data/   it_morphit_ud.tsv  it_isdt_ud.tsv  it_isdt_ud.counts.tsv
+        isdt_not_in_morphit.tsv  morph-it/ (upstream Morph-it! 0.4.8)
+LICENSE  LICENSE-ISDT.txt  CITATION.cff  README.md
+```
 
 | file | description |
 |---|---|
-| `udlex.py` | shared helpers (FEATS normalisation, Gender/Number collapse, CoNLL-U reader) |
-| `convert_morphit.py` | Morph-it! 0.4.8 → UD converter |
-| `it_morphit_ud.tsv` | Morph-it converted lexicon: `FORM LEMMA UPOS FEATS` |
-| `extract_ud.py` | UD treebank → lexicon extractor (used here for ISDT) |
-| `it_isdt_ud.tsv` | ISDT lexicon, same 4-column format |
-| `it_isdt_ud.counts.tsv` | each kept ISDT analysis with corpus `count` and `share` |
-| `isdt_not_in_morphit.py` | lists ISDT analyses absent from the Morph-it lexicon |
-| `isdt_not_in_morphit.tsv` | output of the above |
+| `code/udlex.py` | shared helpers (FEATS normalisation, Gender/Number collapse, CoNLL-U reader) |
+| `code/convert_morphit.py` | Morph-it! 0.4.8 → UD converter |
+| `data/it_morphit_ud.tsv` | Morph-it converted lexicon: `FORM LEMMA UPOS FEATS` |
+| `code/extract_ud.py` | UD treebank → lexicon extractor (used here for ISDT) |
+| `data/it_isdt_ud.tsv` | ISDT lexicon, same 4-column format |
+| `data/it_isdt_ud.counts.tsv` | each kept ISDT analysis with corpus `count` and `share` |
+| `code/isdt_not_in_morphit.py` | lists ISDT analyses absent from the Morph-it lexicon |
+| `data/isdt_not_in_morphit.tsv` | output of the above |
 
-Inputs: upstream Morph-it! 0.4.8 in `morph-it/` (CC-BY-SA 2.0, Baroni &
+Inputs: upstream Morph-it! 0.4.8 in `data/morph-it/` (CC-BY-SA 2.0, Baroni &
 Zanchetta), included in this repository, and the `UD_Italian-ISDT/` treebank
-clone (CC-BY-NC-SA 3.0), not tracked here.
+clone (CC-BY-NC-SA 3.0) at the repository root, not tracked here.
 
-**Rebuild order:** `convert_morphit.py` → `extract_ud.py` → `isdt_not_in_morphit.py`
+**Rebuild order** (scripts can be run from any directory and read/write `data/`):
+`code/convert_morphit.py` → `code/extract_ud.py isdt` → `code/isdt_not_in_morphit.py`
 
 ## Format
 
@@ -37,7 +45,7 @@ FORM <tab> LEMMA <tab> UPOS <tab> FEATS
   four columns are deduplicated. Morph-it tags that UD splits across several
   categories produce several rows (see below).
 
-Run: `python3 convert_morphit.py [infile] [outfile]`
+Run: `python3 code/convert_morphit.py [infile] [outfile]`
 
 ## Morph-it! → UD mapping
 
@@ -142,7 +150,7 @@ definite forms (`il, lo, la, i, gli, le, l'`), `uno` for all indefinite forms
    revisit if aligning to a specific treebank that tags them `AUX`.
 5. **`ABL`** entries need the POS of their expansion.
 
-## ISDT lexicon (`extract_ud.py`)
+## ISDT lexicon (`code/extract_ud.py`)
 
 `it_isdt_ud.tsv` is in the same 4-column format. Every `*.conllu` split is
 read, one entry per token; multiword-token ranges (`2-3 dalla`) and empty nodes
@@ -171,7 +179,7 @@ Notes:
 * **Case-sensitive.** `Stato`/`stato`, `La`/`la` are separate items.
 * ISDT uses the `ExtPos` MWE feature; those variants mostly fall <10 %.
 
-## ISDT analyses not in Morph-it (`isdt_not_in_morphit.py`)
+## ISDT analyses not in Morph-it (`code/isdt_not_in_morphit.py`)
 
 `isdt_not_in_morphit.tsv` lists every ISDT analysis whose exact
 `FORM/LEMMA/UPOS/FEATS` is absent from `it_morphit_ud.tsv`, with the ISDT
@@ -193,15 +201,15 @@ their source:
 
 | files | derived from | licence |
 |---|---|---|
-| `morph-it/` | Morph-it! 0.4.8 | CC-BY-SA 2.0 **or** LGPL (dual-licensed), © 2004-2007 Marco Baroni & Eros Zanchetta |
-| `it_morphit_ud.tsv`, `*.py`, `README_UD.md`, `CITATION.cff` | Morph-it! / this project | CC-BY-SA 2.0 |
-| `it_isdt_ud.tsv`, `it_isdt_ud.counts.tsv`, `isdt_not_in_morphit.tsv` | UD_Italian-ISDT | CC-BY-NC-SA 3.0 (non-commercial, research use), see `LICENSE-ISDT.txt` |
+| `data/morph-it/` | Morph-it! 0.4.8 | CC-BY-SA 2.0 **or** LGPL (dual-licensed), © 2004-2007 Marco Baroni & Eros Zanchetta |
+| `data/it_morphit_ud.tsv`, `code/*.py`, `README.md`, `CITATION.cff` | Morph-it! / this project | CC-BY-SA 2.0 |
+| `data/it_isdt_ud.tsv`, `data/it_isdt_ud.counts.tsv`, `data/isdt_not_in_morphit.tsv` | UD_Italian-ISDT | CC-BY-NC-SA 3.0 (non-commercial, research use), see `LICENSE-ISDT.txt` |
 
 **Morph-it!** is dual-licensed under CC-BY-SA 2.0 and the GNU LGPL. You may
 copy, distribute and adapt it, including commercially, provided that you credit
 the authors, distribute derivative works under the same licence, and make the
 licence terms clear to others. The full text is in
-`morph-it/readme-morph-it.txt` (section "Licensing information") and on the
+`data/morph-it/readme-morph-it.txt` (section "Licensing information") and on the
 [Morph-it! page](https://docs.sslmit.unibo.it/doku.php?id=resources:morph-it#licensing_information).
 Resource: http://sslmit.unibo.it/morphit.
 
