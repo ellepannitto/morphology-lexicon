@@ -5,6 +5,7 @@ type: dataset
 authors:
   - family-names: Pannitto
     given-names: Ludovica
+    orcid: "https://orcid.org/0000-0002-5760-6447"
 license: CC-BY-SA-2.0
 abstract: >-
   Full-form Italian lexicon aligned to Universal Dependencies v2 (UPOS + FEATS),
