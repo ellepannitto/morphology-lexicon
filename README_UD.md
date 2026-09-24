@@ -195,7 +195,7 @@ their source:
 |---|---|---|
 | `morph-it/` | Morph-it! 0.4.8 | CC-BY-SA 2.0 **or** LGPL (dual-licensed), © 2004-2007 Marco Baroni & Eros Zanchetta |
 | `it_morphit_ud.tsv`, `*.py`, `README_UD.md`, `CITATION.cff` | Morph-it! / this project | CC-BY-SA 2.0 |
-| `it_isdt_ud.tsv`, `it_isdt_ud.counts.tsv`, `isdt_not_in_morphit.tsv` | UD_Italian-ISDT | CC-BY-NC-SA 3.0 (non-commercial) |
+| `it_isdt_ud.tsv`, `it_isdt_ud.counts.tsv`, `isdt_not_in_morphit.tsv` | UD_Italian-ISDT | CC-BY-NC-SA 3.0 (non-commercial, research use), see `LICENSE-ISDT.txt` |
 
 **Morph-it!** is dual-licensed under CC-BY-SA 2.0 and the GNU LGPL. You may
 copy, distribute and adapt it, including commercially, provided that you credit
@@ -205,7 +205,10 @@ licence terms clear to others. The full text is in
 [Morph-it! page](https://docs.sslmit.unibo.it/doku.php?id=resources:morph-it#licensing_information).
 Resource: http://sslmit.unibo.it/morphit.
 
-**UD_Italian-ISDT** is CC-BY-NC-SA 3.0. A CC-BY-SA licence would remove its
+**UD_Italian-ISDT** is CC-BY-NC-SA 3.0 and released "for research purposes
+only"; its user agreement is reproduced in `LICENSE-ISDT.txt`. It requires
+citing Bosco et al. (2013, below) and, for electronic publication, linking
+http://medialab.di.unipi.it/wiki/ISDT/. A CC-BY-SA licence would remove its
 non-commercial restriction, which the ISDT licence does not allow, so the
 ISDT-derived files keep CC-BY-NC-SA 3.0. The two sets of files are kept
 separate and are not merged into a single work.
@@ -216,4 +219,8 @@ See `CITATION.cff`. Please also cite the sources:
 
 * Baroni, M. & Zanchetta, E. *Morph-it! A free corpus-based morphological
   resource for the Italian language.* http://sslmit.unibo.it/morphit
+* Bosco, C., Montemagni, S. & Simi, M. (2013). *Converting Italian Treebanks:
+  Towards an Italian Stanford Dependency Treebank.* 7th Linguistic Annotation
+  Workshop & Interoperability with Discourse, ACL, Sofia.
 * UD Italian ISDT, https://github.com/UniversalDependencies/UD_Italian-ISDT
+  (http://medialab.di.unipi.it/wiki/ISDT/)

@@ -29,7 +29,21 @@ references:
     version: "0.4.8"
     url: "http://sslmit.unibo.it/morphit"
     license: CC-BY-SA-2.0
+  - type: conference-paper
+    title: "Converting Italian Treebanks: Towards an Italian Stanford Dependency Treebank"
+    authors:
+      - family-names: Bosco
+        given-names: Cristina
+      - family-names: Montemagni
+        given-names: Simonetta
+      - family-names: Simi
+        given-names: Maria
+    year: 2013
+    collection-title: "7th Linguistic Annotation Workshop & Interoperability with Discourse, ACL"
+    location:
+      name: Sofia
   - type: dataset
     title: "UD Italian ISDT"
-    url: "https://github.com/UniversalDependencies/UD_Italian-ISDT"
+    url: "http://medialab.di.unipi.it/wiki/ISDT/"
+    repository-code: "https://github.com/UniversalDependencies/UD_Italian-ISDT"
     license: CC-BY-NC-SA-3.0
