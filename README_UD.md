@@ -186,29 +186,34 @@ Notes:
 
 ## Licensing
 
-The repository mixes material under different licences; each file follows the
-licence of its source.
+Everything in this repository is released under
+[CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) (see `LICENSE`),
+**except the three ISDT-derived files**, which must stay under the licence of
+their source:
 
 | files | derived from | licence |
 |---|---|---|
 | `morph-it/` | Morph-it! 0.4.8 | CC-BY-SA 2.0 **or** LGPL (dual-licensed), © 2004-2007 Marco Baroni & Eros Zanchetta |
-| `it_morphit_ud.tsv` | Morph-it! | CC-BY-SA 2.0 (share-alike) |
+| `it_morphit_ud.tsv`, `*.py`, `README_UD.md`, `CITATION.cff` | Morph-it! / this project | CC-BY-SA 2.0 |
 | `it_isdt_ud.tsv`, `it_isdt_ud.counts.tsv`, `isdt_not_in_morphit.tsv` | UD_Italian-ISDT | CC-BY-NC-SA 3.0 (non-commercial) |
-| `*.py` | this project | no licence chosen yet |
 
-**Morph-it!** is dual-licensed under the
-[Creative Commons Attribution-ShareAlike 2.0](https://creativecommons.org/licenses/by-sa/2.0/)
-licence and the GNU LGPL. You may copy, distribute and adapt it, including
-commercially, provided that you credit the authors, distribute derivative works
-under the same licence, and make the licence terms clear to others. The full
-text is in `morph-it/readme-morph-it.txt` (section "Licensing information") and
-on the [Morph-it! page](https://docs.sslmit.unibo.it/doku.php?id=resources:morph-it#licensing_information).
+**Morph-it!** is dual-licensed under CC-BY-SA 2.0 and the GNU LGPL. You may
+copy, distribute and adapt it, including commercially, provided that you credit
+the authors, distribute derivative works under the same licence, and make the
+licence terms clear to others. The full text is in
+`morph-it/readme-morph-it.txt` (section "Licensing information") and on the
+[Morph-it! page](https://docs.sslmit.unibo.it/doku.php?id=resources:morph-it#licensing_information).
 Resource: http://sslmit.unibo.it/morphit.
 
-Attribution: *Baroni, M. & Zanchetta, E. Morph-it! A free corpus-based
-morphological resource for the Italian language.* `it_morphit_ud.tsv` is a
-converted derivative and is distributed under CC-BY-SA 2.0.
+**UD_Italian-ISDT** is CC-BY-NC-SA 3.0. A CC-BY-SA licence would remove its
+non-commercial restriction, which the ISDT licence does not allow, so the
+ISDT-derived files keep CC-BY-NC-SA 3.0. The two sets of files are kept
+separate and are not merged into a single work.
 
-**UD_Italian-ISDT** is CC-BY-NC-SA 3.0, so the ISDT-derived files may not be
-used commercially. The ISDT and Morph-it! files are kept separate and are not
-merged into a single work, so each keeps its own licence.
+## Citation
+
+See `CITATION.cff`. Please also cite the sources:
+
+* Baroni, M. & Zanchetta, E. *Morph-it! A free corpus-based morphological
+  resource for the Italian language.* http://sslmit.unibo.it/morphit
+* UD Italian ISDT, https://github.com/UniversalDependencies/UD_Italian-ISDT

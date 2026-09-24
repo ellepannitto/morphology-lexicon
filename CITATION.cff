@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this resource, please cite it as below, and also cite Morph-it! and UD Italian ISDT."
+title: "Italian UD-compatible morphology lexicon (Morph-it! and ISDT)"
+type: dataset
+authors:
+  - family-names: Pannitto
+    given-names: Ludovica
+license: CC-BY-SA-2.0
+abstract: >-
+  Full-form Italian lexicon aligned to Universal Dependencies v2 (UPOS + FEATS),
+  converted from Morph-it! 0.4.8, together with a lexicon extracted from the
+  UD Italian ISDT treebank and the list of ISDT analyses absent from Morph-it!.
+  The ISDT-derived files are distributed under CC-BY-NC-SA 3.0.
+keywords:
+  - Italian
+  - morphology
+  - lexicon
+  - Universal Dependencies
+  - Morph-it!
+references:
+  - type: dataset
+    title: "Morph-it! A free corpus-based morphological resource for the Italian language"
+    authors:
+      - family-names: Baroni
+        given-names: Marco
+      - family-names: Zanchetta
+        given-names: Eros
+    year: 2007
+    version: "0.4.8"
+    url: "http://sslmit.unibo.it/morphit"
+    license: CC-BY-SA-2.0
+  - type: dataset
+    title: "UD Italian ISDT"
+    url: "https://github.com/UniversalDependencies/UD_Italian-ISDT"
+    license: CC-BY-NC-SA-3.0
