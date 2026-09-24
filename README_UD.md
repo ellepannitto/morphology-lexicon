@@ -17,9 +17,9 @@ following the conventions of the Italian UD treebanks (ISDT).
 | `isdt_not_in_morphit.py` | lists ISDT analyses absent from the Morph-it lexicon |
 | `isdt_not_in_morphit.tsv` | output of the above |
 
-Inputs (not tracked here): upstream Morph-it! 0.4.8 in `morph-it/`
-(CC-BY-SA 2.0, Baroni & Zanchetta) and the `UD_Italian-ISDT/` treebank clone
-(CC-BY-NC-SA 3.0).
+Inputs: upstream Morph-it! 0.4.8 in `morph-it/` (CC-BY-SA 2.0, Baroni &
+Zanchetta), included in this repository, and the `UD_Italian-ISDT/` treebank
+clone (CC-BY-NC-SA 3.0), not tracked here.
 
 **Rebuild order:** `convert_morphit.py` → `extract_ud.py` → `isdt_not_in_morphit.py`
 
